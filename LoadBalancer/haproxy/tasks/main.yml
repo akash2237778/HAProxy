@@ -1,0 +1,24 @@
+---
+# tasks file for haproxy
+#
+- package:
+        name: haproxy
+        state: present
+
+- template:
+        src: templates/haproxy.cfg.j2
+        dest: /etc/haproxy/haproxy.cfg
+  notify: "Restart HAproxy"
+
+- firewalld:
+        state: enabled
+        immediate: yes
+        port: 8080/tcp
+        permanent: yes
+
+- service:
+        name: haproxy
+        state: started
+        enabled: yes
+
+

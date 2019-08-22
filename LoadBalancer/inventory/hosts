@@ -1,0 +1,12 @@
+
+[httpd]
+192.168.56.103		ansible_username=root		ansible_password=redhat
+192.168.56.104		ansible_username=root		ansible_password=redhat
+
+[HA]
+192.168.56.107		ansible_username=root		ansible_password=redhat
+
+[web1]
+192.168.56.103		ansible_username=root		ansible_password=redhat
+[web2]
+192.168.56.104		ansible_username=root		ansible_password=redhat
