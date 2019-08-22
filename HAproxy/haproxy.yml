@@ -1,0 +1,7 @@
+- hosts: HA
+  roles:
+          - role: haproxy
+
+- hosts: httpd
+  roles:
+          - role: web

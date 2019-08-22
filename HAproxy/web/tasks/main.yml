@@ -1,0 +1,22 @@
+---
+# tasks file for web
+#
+
+- package:
+        name: httpd
+        state: present
+
+- template:
+        src: files/index.j2
+        dest: /var/www/html/index.html
+
+- firewalld:
+        permanent: yes
+        immediate: yes
+        state: enabled
+        port: 80/tcp
+
+- service:
+        name: httpd
+        state: started
+        enabled: yes
